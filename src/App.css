@@ -1,61 +1,167 @@
+/* --- Global root and accessibility styles --- */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', Arial, sans-serif;
-  background: #f4f4f4;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+/* --- Cleaned and merged styles --- */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #181818;
+  color: #f3f3f3;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 32px 16px 16px 16px;
-  background: #fff;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #000;
   border-radius: 12px;
-  box-shadow: 0 2px 16px #0001;
+  padding: 2rem;
+  box-shadow: 0 2px 16px #0008;
 }
-h1 {
-  color: #2a7fff;
-  font-size: 2.2rem;
-  margin-bottom: 0.5em;
+
+h1, h2 {
+  color: #ffb347;
 }
-h2 {
-  color: #a0522d;
-  margin-top: 2em;
-}
+
 table {
-  border-collapse: collapse;
-  margin: 1em 0;
   width: 100%;
-  background: #fafafa;
-  border-radius: 8px;
-  overflow: hidden;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
 }
 th, td {
-  border: 1px solid #ddd;
-  padding: 0.5em 0.7em;
+  border: 1px solid #444;
+  padding: 0.5rem 1rem;
   text-align: center;
 }
-th {
-  background: #2a7fff;
-  color: #fff;
-}
+
 input[type="number"] {
-  width: 70px;
-  padding: 0.2em 0.4em;
+  width: 80px;
+  padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  border: 1px solid #bbb;
-  font-size: 1em;
+  border: 1px solid #555;
+  background: #181818;
+  color: #f3f3f3;
 }
+
 button {
-  background: #2a7fff;
+  background: #a0522d;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 0.3em 1em;
-  font-size: 1em;
+  padding: 0.4rem 1rem;
   cursor: pointer;
-  margin: 0 2px;
+  font-weight: bold;
+  margin-left: 0.5rem;
   transition: background 0.2s;
 }
 button:hover {
-  background: #1a5fd0;
+  background: #c97c3b;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
